@@ -1,0 +1,12 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "semi": ["error", "always", { "omitLastInOneLineBlock": true }],
+    "space-before-function-paren": ["error", "never"],
+    "func-names": ["error", "never"],
+    "no-confusing-arrow": 0
+  }
+}
