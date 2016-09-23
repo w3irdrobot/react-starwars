@@ -7,6 +7,9 @@
     "semi": ["error", "always", { "omitLastInOneLineBlock": true }],
     "space-before-function-paren": ["error", "never"],
     "func-names": ["error", "never"],
-    "no-confusing-arrow": 0
+    "no-use-before-define": 0,
+    "no-confusing-arrow": 0,
+    "react/jsx-filename-extension": 0,
+    "react/prop-types": 0
   }
 }
