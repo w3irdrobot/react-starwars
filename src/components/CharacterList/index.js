@@ -1,12 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setCurrentUser } from '../../redux/character/actions';
+import {
+  setCurrentCharacter,
+  getCharacterProfile,
+} from '../../redux/character/actions';
 
-const CharacterList = ({ characters, setUser }) =>
+const CharacterList = ({ characters, setCharacter }) =>
   <ul>
     {characters.map((c, i) =>
       <li
-        onClick={setUser(i)}
+        onClick={setCharacter(i + 1)}
         key={c.name}
       >
         {c.name}
@@ -19,7 +22,12 @@ const mapStateToProps = ({ characters }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  setUser: id => () => dispatch(setCurrentUser(id)),
+  setCharacter(id) {
+    return () => {
+      dispatch(setCurrentCharacter(id));
+      dispatch(getCharacterProfile(id));
+    };
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CharacterList);
