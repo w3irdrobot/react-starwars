@@ -1,19 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import App from './components/App';
-import reducer from './reducer';
-import { getCharacters } from './components/CharacterList/actions';
+import reducer from './redux';
+import { getCharacters } from './redux/characters/actions';
 
 require('./index.html');
 
 // Create redux store
-const store = createStore(
-  reducer,
-  applyMiddleware(thunk)
-);
+const store = createStore(reducer, compose(
+  applyMiddleware(thunk),
+  window.devToolsExtension ? window.devToolsExtension() : f => f
+));
 
 // Kick off things by getting all characters
 store.dispatch(getCharacters());
