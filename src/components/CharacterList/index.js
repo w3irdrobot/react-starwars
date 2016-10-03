@@ -6,16 +6,18 @@ import {
 } from '../../redux/character/actions';
 
 const CharacterList = ({ characters, setCharacter }) =>
-  <ul>
-    {characters.map((c, i) =>
-      <li
-        onClick={setCharacter(i + 1)}
-        key={c.name}
-      >
-        {c.name}
-      </li>
-    )}
-  </ul>;
+  <div id='character-list'>
+    <ul>
+      {characters.map((c, i) =>
+        <li
+          onClick={setCharacter(i + 1)}
+          key={c.name}
+        >
+          {c.name}
+        </li>
+      )}
+    </ul>
+  </div>;
 
 const mapStateToProps = ({ characters }) => ({
   characters,
