@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {
   setCurrentCharacter,
   getCharacterProfile,
-} from '../../redux/character/actions';
+} from '../redux/character/actions';
 
 const CharacterList = ({ characters, setCharacter }) =>
   <div id='character-list'>
