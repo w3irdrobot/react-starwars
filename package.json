@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "serve": "webpack-dev-server --hot --inline"
+    "serve": "webpack-dashboard -- webpack-dev-server --hot --inline"
   },
   "keywords": [],
   "author": "",
@@ -29,6 +29,7 @@
     "eslint-plugin-react": "^6.3.0",
     "file-loader": "^0.9.0",
     "webpack": "^1.13.2",
+    "webpack-dashboard": "^0.2.0",
     "webpack-dev-server": "^1.16.1"
   }
 }
