@@ -6,7 +6,8 @@ import {
 } from '../redux/character/actions';
 
 const CharacterList = ({ characters, setCharacter }) =>
-  <div id='character-list'>
+  <div id='character-list' className='col-md-6'>
+    <h1>Characters</h1>
     <ul>
       {characters.map((c, i) =>
         <li

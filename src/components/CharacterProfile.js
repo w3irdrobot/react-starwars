@@ -2,13 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const CharacterProfile = ({ profile, world }) =>
-  <div id='character-profile'>
+  <div id='character-profile' className='col-md-6'>
     <h1>Profile</h1>
-    <h2>{profile.name}</h2>
-    <p>Height: {profile.height}cm</p>
-    <p>Weight: {profile.mass}kg</p>
-    <p>Homeworld: {world.name}</p>
-    <p>Gender: {profile.gender}</p>
+    {profile.name && <p>Name: {profile.name}</p>}
+    {profile.height && <p>Height: {profile.height}cm</p>}
+    {profile.mass && <p>Weight: {profile.mass}kg</p>}
+    {world.name && <p>Homeworld: {world.name}</p>}
+    {profile.gender && <p>Gender: {profile.gender}</p>}
   </div>;
 
 const mapStateToProps = ({ character: { profile, world } }) => ({
