@@ -21,7 +21,86 @@
 				</section>
 
 				<section>
-					<h2>Redux is a predictable state container for JavaScript apps.</h2>
+					<section>
+						<h2>Redux is a predictable state container for JavaScript apps.</h2>
+					</section>
+
+					<section>
+						<p>It puts all your state into one place and provides a mechanism to subscribe to changes in the state and to update that state.</p>
+
+						<p>This makes managing the state of your application straightforward.</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Definitions</h1>
+					</section>
+
+					<section>
+						<h2>State</h2>
+						<p>A container where all the data for your application is stored. It is represented as a plain JavaScript object.</p>
+					</section>
+
+					<section>
+						<h2>Action</h2>
+						<p>A JavaScript object that represents some change that needs to happen to the state. Updating the user status, changing the currently showing recipes, etc.</p>
+					</section>
+
+					<section>
+						<h2>Reducer</h2>
+						<p>A simple JavaScript function that is passed the current state (or part of the state) and the current action and returns the new piece of state. It is its job to decide what happens to the state for each action.</p>
+					</section>
+
+					<section>
+						<h2>View</h2>
+						<p>The elements that are rendered to the screen. Essentially, what you see!</p>
+					</section>
+
+					<section>
+						<h2>Dispatch</h2>
+						<p>A function that sends an action to the state to be "processed."</p>
+					</section>
+
+					<section>
+						<h2>Subscribe</h2>
+						<p>To listen for a change on the state and do something when it does.</p>
+					</section>
+				</section>
+
+
+				<section>
+					<section>
+						<h1>How it works</h1>
+					</section>
+
+					<section>
+						<h3>Subscribe to the state</h3>
+						<p>First thing is to render our view and subscribe to changes in the state. When something changes, we will be told about it!</p>
+					</section>
+
+					<section>
+						<h3>Cause an action</h3>
+						<p>There needs to be some way for the user to cause something to change on the page. This could be as simple as clicking a button. This button would then cause an action to be sent to state to tell it to change.</p>
+					</section>
+
+					<section>
+						<h3>Dispatch an action</h3>
+						<p>When you want something to change in the state, we need to dispatch an action to tell the state that it's time to update!</p>
+						<p>The action tells the state what action is occuring and provides the data it needs to complete the action.</p>
+					</section>
+
+					<section>
+						<h3>Running the reducers</h3>
+						<p>The state passes this action off to its main reducer which in turn passes it to all the reducers that it knows about. Each reducer is passed the piece of state it cares about and the action that is happening.</p>
+						<p>Once each reducer is done, it passes back the new state, which is combined together into our new complete piece of state.</p>
+					</section>
+
+					<section>
+						<h3>Telling our subscribers</h3>
+						<p>Once the state is updated, it will then tell all its subscribers that something changed and will give them all this new state.</p>
+						<p>These subscribers are our views. The views take the state and update themselves with the new values (if there are any).</p>
+					</section>
 				</section>
 			</div>
 		</div>
