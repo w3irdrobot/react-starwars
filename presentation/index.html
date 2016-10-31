@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Using Redux with React</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/moon.css">
@@ -100,6 +100,55 @@
 						<h3>Telling our subscribers</h3>
 						<p>Once the state is updated, it will then tell all its subscribers that something changed and will give them all this new state.</p>
 						<p>These subscribers are our views. The views take the state and update themselves with the new values (if there are any).</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<p>This can be a real pain to set up in a React application.</p>
+						<p>Managing all the subscribers and making sure every component can access the redux store is not easy in large applications.</p>
+					</section>
+
+					<section>
+						<h1>Luckily there is a package that does this for us!</h1>
+					</section>
+
+					<section>
+						<h2>Enter react-redux...</h2>
+						<p>It exposes a <code>Provider</code> component that wraps our application and makes the store available to all components that are <code>connect</code>ed.</p>
+					</section>
+
+					<section>
+						<h3>It makes working with the redux store a cinch!</h3>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Alright, dude. What are we building?</h2>
+					</section>
+
+					<section>
+						<h3>We are going to build a simple application using the Star Wars API (http://swapi.co)</h3>
+						<p>We will be able to see a list of characters from Star Wars. We will then make it so more data is grabbed we click on one them.</p>
+					</section>
+
+					<section>
+						<img src="images/application_screen.png" >
+					</section>
+
+					<section>
+						<h1>Technology</h1>
+						<ul>
+							<li class="fragment">react</li>
+							<li class="fragment">react-dom</li>
+							<li class="fragment">redux</li>
+							<li class="fragment">react-redux</li>
+							<li class="fragment">redux-thunk</li>
+							<li class="fragment">webpack</li>
+							<li class="fragment">webpack-dev-server</li>
+							<li class="fragment">babel</li>
+						</ul>
 					</section>
 				</section>
 			</div>
