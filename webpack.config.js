@@ -1,9 +1,11 @@
-const path = require('path');
 const webpack = require('webpack');
-const DashboardPlugin = require('webpack-dashboard/plugin');
+const path = require('path');
 
 module.exports = {
-  entry: './src/app.js',
+  entry: [
+    'react-hot-loader/patch',
+    './src/app.js',
+  ],
   output: {
     path: path.resolve(__dirname, './build'),
     filename: 'app.bundle.js',
@@ -12,22 +14,16 @@ module.exports = {
     loaders: [
       {
         test: /\.html$/,
-        loader: 'file?name=[name].[ext]',
+        loader: 'file-loader?name=[name].[ext]',
       },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel',
+        loader: 'babel-loader',
       },
     ],
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new DashboardPlugin(),
+    new webpack.NamedModulesPlugin(),
   ],
-  devServer: {
-    hot: true,
-    inline: true,
-    contentBase: './src',
-  },
 };

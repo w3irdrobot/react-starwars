@@ -7,7 +7,7 @@ const CharacterProfile = ({ profile, world }) =>
     {profile.name && <p>Name: {profile.name}</p>}
     {profile.height && <p>Height: {profile.height}cm</p>}
     {profile.mass && <p>Weight: {profile.mass}kg</p>}
-    {world.name && <p>Homeworld: {world.name}</p>}
+    {world.name && <p>World: {world.name}</p>}
     {profile.gender && <p>Gender: {profile.gender}</p>}
   </div>;
 
