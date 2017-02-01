@@ -11,9 +11,9 @@ import { getCharacters } from './redux/characters/actions';
 require('./index.html');
 
 // Create redux store
-const store = createStore(reducer, compose(
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(reducer, composeEnhancers(
   applyMiddleware(thunk),
-  window.devToolsExtension ? window.devToolsExtension() : f => f
 ));
 
 // Kick off things by getting all characters
